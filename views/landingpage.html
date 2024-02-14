@@ -1,0 +1,416 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Airbnb | Holiday rentals,cabins,beach,houses and more</title>
+    <link rel="icon" href="../file/airbnb.png" type="image/icon type">
+    <link rel="stylesheet" href="../public/css/style.css" type="text/css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" />
+</head>
+
+<body>
+
+    <section id="container1">
+        <section id="header">
+            <a href="#" id="popup"><u>Learn about Guest Favourites,the most loved homes on Airbnb</u></a>
+        </section>
+    </section>
+    <hr id="line">
+    <section id="container2">
+        <div id="dbimg">
+            <%a.forEach((e)=>{%>
+                <img src="<%=e.Picture%>" id="img1">
+                <%})%>
+
+        </div>
+
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <div class="stays">
+            <p class="a1"><a class="a" id="st" onclick="fun1()">Stays</a></p>
+        </div>
+        <div class="experiences">
+            <p class="a1"><a class="ab" onclick="fun2()" id="exp">Experiences</a></p>
+        </div>
+        <div class="Online">
+            <p class="a1"><a href="/newpage" target="_parent" class="ab" id="online">Online Experiences</a></p>
+        </div>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+        <div class="airbnb">
+            <p class="a1"><a href="/airbnb" class="b">Airbnb your home</a></p>
+        </div>
+        <div class="brw">
+            <p class="a2">
+                <%c.forEach((e)=>{%>
+                    <img src="<%=e.Picture%>" class="browser" />
+                    <%})%>
+            </p>
+        </div>
+        <div class="loginicon">
+            <p class="a3">
+                <%j.forEach((n)=>{%>
+                    <img src="<%=n.Picture%>" class="user" onclick="fun3()" />
+                    <%})%>
+            </p>
+        </div>
+        &nbsp;&nbsp;&nbsp;&nbsp;
+    </section><br>
+    <section>
+        <div id="profilepopup">
+            <ul class="menu">
+                <!-- problem here............. -->
+                <div class="bg">
+                    <li><a href="#" class="show">Sign up</a></li>
+                </div>&nbsp;
+                <div class="bg">
+                    <li><a href="#" class="s">Log in</a></li>
+                </div>&nbsp;
+                <hr class="line">
+                <div class="bg">
+                    <li><a href="#" class="s">Airbnb your home</a></li>
+                </div>&nbsp;
+                <div class="bg">
+                    <li><a href="#" class="s">Help Centre</a></li>
+                </div>&nbsp;
+            </ul>
+        </div>
+    </section>
+    <section class="search">
+        <form action="" method="post">
+            <div class="searchcontainer" id="u1">
+                <div class="sc" id="sc1" onclick="fun5()">
+                    <div id="text2">
+                        Where &nbsp;
+                        <input type="text" placeholder="Search destinations" class="search1" id="u">
+                    </div>
+                </div><br>
+                <div class="v1" id="d3"></div><br>
+
+                <div id="sc2" onclick="fun6()">
+                    <div class="checkin">
+                        Check in <br>
+                        <input type="text" placeholder="Add dates" class="search2" size="5" id="f1">
+                    </div>
+                </div>
+                <div class="v2" id="d1"></div>
+                <div id="sc3" onclick="fun7()">
+                    <div class="checkout">
+                        Check out <br>
+                        <input type="text" placeholder="Add dates" class="search1" size="5" id="f2">
+                    </div>
+                </div>
+                <div class="v4" id="d2"></div>
+                <div class="sc" id="sc4" onclick="fun8()">
+                    <div class="who">
+                        Who <br>
+                        <input type="text" placeholder="Add guests" class="search1" id="f3">
+                    </div>
+                    <!-- v1 div's problem in index.js style apply only one time?? -->
+                    <div class="settings">
+                        <div class="red" id="change">
+                            <div>
+                                <button type="submit" id="v2">
+                                    <img src="./images/searchlogo.png" alt="search" class="searchimage" id="searchlg">
+                                    <span id="texthere">Search</span></button>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </form>
+    </section>&nbsp;
+    <hr><br>
+    <section class="l">
+        <%b.forEach((element)=>{%>
+            <div class="p">
+                <img src="<%=element.Picture%>" class="i" />
+                <a href="#" id="favorite">
+                    <span class="material-symbols-outlined" id="f">
+                        favorite
+                    </span>
+                </a>
+                <div class="v3">
+                    <a href="#" class="imagename">
+                        <%=element.ImageName%>
+                            <p class="rating"><img src="<%=element.RatingLogo%>" class="logo" />
+                            <p class="ratingtext">
+                                <%=element.Rating%>
+                            </p>
+                            </p>
+                            <p class="imagedes">
+                                <%=element.Imagedescription%><br>
+                                    <%=element.PostDate%>
+                            </p>
+                            <p class="price">
+                                <%=element.Price%>
+                                    <span class="shift">
+                                        <%=element.Shift%>
+                                    </span>
+                            </p>
+                    </a><br>
+                </div>
+            </div>
+            <%})%>
+    </section>
+    <br><br>
+    <section class="grayfooter">
+        <br><br>
+        <h4 class="inspiration">Inspiration for future getaways</h4><br>
+        <div class="parent">
+            <a href="#" target="_parent" class="same">
+                <div class="popular">Popular</div>
+            </a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <a href="#" target="_parent" class="same">
+                <div class="r">Arts & culture</div>
+            </a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <a href="#" target="_parent" class="same">
+                <div class="r">Outdoors</div>
+            </a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <a href="#" target="_parent" class="same">
+                <div class="r">Mountains</div>
+            </a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <a href="#" target="_parent" class="same">
+                <div class="r">Beach</div>
+            </a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <a href="#" target="_parent" class="same">
+                <div class="r">Unique stays</div>
+            </a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <a href="#" target="_parent" class="same">
+                <div class="r">Categories</div>
+            </a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <a href="#" target="_parent" class="same">
+                <div class="r">Things to do</div>
+            </a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        </div>
+        <hr class="footerline">
+        <div class="table">
+            <%t.forEach((fetchdata)=>{%>
+                <ul class="showdata">
+                    <li class="fetchdata">
+                        <a href="#" target="_parent" id="q"><span id="k">
+                                <%=fetchdata.heading%>
+                            </span></a><br>
+                        <a href="#" target="_parent" id="q"><span id="z">
+                                <%=fetchdata.subheading%></a></span>
+                    </li>
+                </ul>
+                <%})%>
+        </div>
+        <hr class="o">
+        <div class="footertwo">
+            <div>
+                <%u1.forEach((data)=>{%>
+                    <a href="#" target="_parent" class="anchor1"><span class="data1">
+                            <%=data.heading%>
+                        </span></a>
+                    <%})%>
+            </div>
+            <div>
+                <%w1.forEach((x)=>{%>
+                    <a href="#" target="_parent" class="anchor1"><span class="data2">
+                            <%=x.heading%>
+                        </span></a>
+                    <%})%>
+            </div>
+            <div>
+                <%r1.forEach((x)=>{%>
+                    <a href="#" target="_parent" class="anchor1"><span class="data3">
+                            <%=x.heading%>
+                        </span></a>
+                    <%})%>
+            </div>
+        </div>
+        <div class="footertwo" id="g">
+            <div>
+                <%c1.forEach((x)=>{%>
+                    <a href="#" target="_parent" class="anchor2"><span>
+                            <%=x.subheading%>
+                        </span></a>
+                    <%})%>
+            </div>
+            <div>
+                <%d1.forEach((x)=>{%>
+                    <a href="#" target="_parent" class="anchor2"><span>
+                            <%=x.subheading%>
+                        </span></a>
+                    <%})%>
+            </div>
+            <div>
+                <%h.forEach((x)=>{%>
+                    <a href="#" target="_parent" class="anchor2"><span>
+                            <%=x.subheading%>
+                        </span></a>
+                    <%})%>
+            </div>
+            <div>
+                <%e.forEach((x)=>{%>
+                    <a href="#" target="_parent" class="anchor2"><span>
+                            <%=x.subheading%>
+                        </span></a>
+                    <%})%>
+            </div>
+            <div>
+                <%f.forEach((x)=>{%>
+                    <a href="#" target="_parent" class="anchor2"><span>
+                            <%=x.subheading%>
+                        </span></a>
+                    <%})%>
+            </div>
+            <div>
+                <%g.forEach((x)=>{%>
+                    <a href="#" target="_parent" class="anchor2"><span>
+                            <%=x.subheading%>
+                        </span></a>
+                    <%})%>
+            </div>
+            <div>
+                <%i.forEach((x)=>{%>
+                    <a href="#" target="_parent" class="anchor2"><span>
+                            <%=x.subheading%>
+                        </span></a>
+                    <%})%>
+            </div>
+            <div>
+                <%l.forEach((x)=>{%>
+                    <a href="#" target="_parent" class="anchor2"><span>
+                            <%=x.subheading%>
+                        </span></a>
+                    <%})%>
+            </div>
+            <div>
+                <%m.forEach((x)=>{%>
+                    <a href="#" target="_parent" class="anchor2"><span>
+                            <%=x.subheading%>
+                        </span></a>
+                    <%})%>
+            </div>
+            <div>
+                <%n.forEach((x)=>{%>
+                    <a href="#" target="_parent" class="anchor2"><span>
+                            <%=x.subheading%>
+                        </span></a>
+                    <%})%>
+            </div>
+            <div>
+                <%o.forEach((x)=>{%>
+                    <a href="#" target="_parent" class="anchor2"><span>
+                            <%=x.subheading%>
+                        </span></a>
+                    <%})%>
+            </div>
+            <div>
+                <%q.forEach((x)=>{%>
+                    <a href="#" target="_parent" class="anchor2"><span>
+                            <%=x.subheading%>
+                        </span></a>
+                    <%})%>
+            </div>
+            <div>
+                <%v.forEach((x)=>{%>
+                    <a href="#" target="_parent" class="anchor2"><span>
+                            <%=x.subheading%>
+                        </span></a>
+                    <%})%>
+            </div>
+            <div>
+                <%ab.forEach((x)=>{%>
+                    <a href="#" target="_parent" class="anchor2"><span>
+                            <%=x.subheading%>
+                        </span></a>
+                    <%})%>
+            </div>
+            <div>
+                <%bc.forEach((x)=>{%>
+                    <a href="#" target="_parent" class="anchor2"><span>
+                            <%=x.subheading%>
+                        </span></a>
+                    <%})%>
+            </div>
+            <div>
+                <%cd.forEach((x)=>{%>
+                    <a href="#" target="_parent" class="anchor2"><span>
+                            <%=x.subheading%>
+                        </span></a>
+                    <%})%>
+            </div>
+            <div>
+                <%de.forEach((x)=>{%>
+                    <a href="#" target="_parent" class="anchor2"><span>
+                            <%=x.subheading%>
+                        </span></a>
+                    <%})%>
+            </div>
+
+        </div>
+        <hr class="footerline">
+        <section class="last">
+            <div>
+                <%ef.forEach((x)=>{%>
+                    <a href="#" target="_parent"><span>
+                            <%=x.word%>
+                        </span>
+                    </a>
+                    <%})%>
+            </div>
+            <div>
+                <%gh.forEach((x)=>{%>
+                    <a href="#" target="_parent"><span>
+                            <%=x.word%>
+                        </span>
+                    </a>
+                    <%})%>
+            </div>
+            <div>
+                <%re.forEach((x)=>{%>
+                    <a href="#" target="_parent"><span>
+                            <%=x.word%>
+                        </span>
+                    </a>
+                    <%})%>
+            </div>
+            <div>
+                <%em.forEach((x)=>{%>
+                    <a href="#" target="_parent"><span>
+                            <%=x.word%>
+                        </span>
+                    </a>
+                    <%})%>
+            </div>
+            <div>
+                <%el1.forEach((x)=>{%>
+                    <a href="#" target="_parent"><span>
+                            <%=x.word%>
+                        </span>
+                    </a>
+                    <%})%>
+            </div>
+            <div>
+                <%rt.forEach((x)=>{%>
+                    <a href="#" target="_parent"><span>
+                           <img src="<%=x.photos%>" alt="Languageimage" class="Languageimage"> 
+                        </span>
+                    </a>
+                    <%})%>
+            </div>
+            <div>
+                <a href="#" target="_parent">
+                    <span>
+                        <h6>English(IN)</h6>
+                    </span>
+                </a>
+            </div>
+        </section>
+    </section>
+
+    <script src="./js/index.js" type="text/javascript"></script>
+</body>
+
+</html>
